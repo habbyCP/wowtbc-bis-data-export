@@ -12,3 +12,7 @@
 enchant  附魔
 
 gems  珠宝
+
+### english
+
+wait for a long time
