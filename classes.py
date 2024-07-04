@@ -19,6 +19,8 @@ slot = ['head',
         '18 Slot Ammo Pouch',
         '18 Slot Quiver',
         'relic']
+
+
 zhiye_tianfu = {
     'warlock': {
         'demonology': {},

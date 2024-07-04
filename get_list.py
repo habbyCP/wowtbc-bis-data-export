@@ -29,7 +29,9 @@ url_list = ['https://wowtbc.gg/page-data/bis-list/beast-mastery-hunter/page-data
             'https://wowtbc.gg/page-data/bis-list/demonology-warlock/page-data.json',
             'https://wowtbc.gg/page-data/bis-list/destruction-warlock/page-data.json',
             'https://wowtbc.gg/page-data/bis-list/destruction-fire-warlock/page-data.json']
-# 发送 HTTP GET 请求
+
+
+## 下载并保存文件
 
 for url in url_list:
     response = requests.get(url)
