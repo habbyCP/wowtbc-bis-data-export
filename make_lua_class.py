@@ -4,31 +4,7 @@ from classes import zhiye_tianfu, slot, phase
 from jinja2 import Template
 
 
-def make_tianfu():
-    Bistooltip_wh_bislists = {}
-    df = pd.read_excel('out_put/item.xlsx')
-    unique_zhiye = df['zhiye'].unique()
-    for zhiye in unique_zhiye:
-        print(zhiye)
-        Bistooltip_wh_bislists[zhiye] = {}
-        unique_tianfu = df[df['zhiye'] == zhiye]['tianfu'].unique()
-        for tianfu in unique_tianfu:
-            print(tianfu)
-            Bistooltip_wh_bislists[zhiye][tianfu] = {}
 
-    print(Bistooltip_wh_bislists)
-
-
-def make_phase():
-    df = pd.read_excel('out_put/item.xlsx')
-    unique_phase = df['phase'].unique()
-    print(unique_phase)
-
-
-def make_slot():
-    df = pd.read_excel('out_put/item.xlsx')
-    unique_slot = df['slot'].unique()
-    print(unique_slot)
 
 
 def make_data():
@@ -85,5 +61,6 @@ def make_data():
                     sort += 1
                     file.write(output)
     file.close()
+
 
 make_data()

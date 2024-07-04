@@ -8,10 +8,10 @@ import pandas as pd
 
 class ExcelData:
     # 类，转换json 数据到 execl
-    def __init__(self, base_path):
-        directory = base_path + '/json'
+    def __init__(self, directory):
+        # directory = base_path + '/json'
         # 获取目录下的所有文件和子目录
-        all_files = os.listdir('json')
+        all_files = os.listdir(directory)
         self.files = []
         # 需要解析的 json 文件清单
         for f in all_files:
@@ -21,7 +21,7 @@ class ExcelData:
                 self.files.append(f)
         # 生成 excel 文件路径
         timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-        self.excel_name = f'{base_path}/out_put/item_{timestamp}.xlsx'
+        self.excel_name = f'{directory}/../out_put/item_{timestamp}.xlsx'
         self.item_map = {}
         # 获取装备 名字和 id 的清单
         excel = pd.read_excel('item_map.xlsx')
@@ -93,3 +93,4 @@ class ExcelData:
     def save(self):
         df_all = pd.DataFrame(self.out_put_list)
         df_all.to_excel(self.excel_name, index=False)
+        print("已生成 %s" % self.excel_name)
