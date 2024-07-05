@@ -54,9 +54,6 @@ class Item:
                         the_rank = the_rank + 1
             table[the_item['item_id']][zt]['slots'][the_item['slot']][the_item['phase']] = the_rank
 
-        for item_id, value in table.items():
-            print(item_id, value)
-            break
 
 
 item = Item()
