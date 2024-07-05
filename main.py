@@ -20,7 +20,10 @@ def json_to_excel():
 
 
 def make_bis_lua_file():
-    the_dir = os.getcwd() + '/out_put'
+    the_dir = os.path.join(os.getcwd(), 'out_put')
+    if not os.path.exists(the_dir):
+        os.mkdir(the_dir)
+    print('请选择 bis 清单文件')
     all_files = os.listdir(the_dir)
     for num in range(len(all_files)):
         print('%s. %s' % (num, all_files[num]))
@@ -29,9 +32,11 @@ def make_bis_lua_file():
         print('输入有误')
         exit(1)
     file_path = os.path.join(the_dir, all_files[the_choice])
-    print('正在生成 %s' % file_path)
+    bis_dir = os.path.join(os.getcwd(), 'lua_file')
+    if not os.path.exists(bis_dir):
+        os.mkdir(bis_dir)
     # 生成 lua 的 bis 文件
-    bis = BisLua(file_path)
+    bis = BisLua(file_path, bis_dir)
     bis.make_bis_lua()
 
 

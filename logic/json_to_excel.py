@@ -61,6 +61,15 @@ class ExcelData:
             for phase in bis['phase']:
                 if 'name' not in bis:
                     continue
+                if bis['slot'] == 'finger 2':
+                    continue
+                if bis['slot'] == 'finger 1':
+                    bis['slot'] = 'finger'
+                if bis['slot'] == 'trinket 2':
+                    continue
+                if bis['slot'] == 'trinket 1':
+                    bis['slot'] = 'trinket'
+                    continue
                 the_item = {
                     'name': bis['name'],
                     'value': bis['value'],
